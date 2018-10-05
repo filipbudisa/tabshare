@@ -1,0 +1,6 @@
+div(class="item")
+	a(href="/sadrzaj/" + sadrzaj.id)
+		p(class="naziv_pjesme") #{sadrzaj.pjesma}
+		p(class="naziv_izvodaca") #{sadrzaj.izvodac}
+		p(class="naziv_autora") #{sadrzaj.autorNaziv}
+		p(class="vrsta") #{tipoviNice[sadrzaj.tip]}

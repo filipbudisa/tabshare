@@ -1,0 +1,32 @@
+extends tmpl/layout
+
+block content
+
+	div(id="main" class="container moj-sadrzaj")
+		ul(class="container_menu cm_4")
+			li(class=sadrzajStranica !== 0 || "selected")
+				h2
+					a(href="/moj-sadrzaj/") Sav sadržaj
+			li(class=sadrzajStranica !== 1 || "selected")
+				h2
+					a(href="/moj-sadrzaj/tekstovi/") Tekstovi
+			li(class=sadrzajStranica !== 2 || "selected")
+				h2
+					a(href="/moj-sadrzaj/akordi/") Akordi
+			li(class=sadrzajStranica !== 3 || "selected")
+				h2
+					a(href="/moj-sadrzaj/tabulature/") Tabulature
+
+		div(class="col")
+			a(class="button" href="/uredivanje/tab") Tab
+			a(class="button" href="/uredivanje/akordi") Akordi
+			a(class="button" href="/uredivanje/tekst") Tekst
+			span Novo:
+
+		div(class="col")
+			each sadrzaj in sadrzaji
+				include tmpl/item_sadrzaj
+			else
+				h3 Nema sadržaja
+
+		div(class="clearfix")

@@ -1,0 +1,55 @@
+extends tmpl/layout
+
+block content
+
+	div(class="sadrzaj-title container")
+		div(class="sadrzaj-title-left")
+			h1(class="sadrzaj-pjesma") #{data.pjesma.naziv}
+			h2(class="sadrzaj-izvodac") #{data.izvodac.naziv}
+		div(class="sadrzaj-title-right")
+			h2(class="sadrzaj-autor") #{data.autor.naziv}
+			h2(class="sadrzaj-tip") #{tipoviNice[data.tip]}
+
+
+	div(id="main" class="container sadrzaj")
+		div(class="col")
+			div(class="meta")
+				div(class="meta-left")
+					h4 #{data.pogleda} pogled/a
+					h4 #{data.komentara} komentar/a
+				div(class="meta-right")
+					if user && user.id === data.autor.id
+						a(href="/uredivanje/" + data.id class="button") Uredi
+
+		div(class="col")
+			div(id="sadrzaj-content" class=(data.tip === 2 ? "mono" : ""))!= data.content
+
+		div(class="clearfix")
+
+	h2(class="title") Komentari
+
+	div(class="main container komentari")
+		div(class="col")
+			if user
+				form(method="post")
+					textarea(id="komentar" name="komentar")
+					if data.komentara !== 0
+						h4 #{data.komentara} Komentar/a
+					input(type="submit" value="Objavi" class="right")
+
+					div(class="clearfix")
+			else
+				h3 Morate se #[a(href="/prijava/" style="text-decoration: underline") ulogirati] za komentiranje
+
+			if !user && data.komentara !== 0
+				h4 #{data.komentara} komentar/a
+
+			each komentar in komentari
+				div(class="komentar")
+					div(class="meta") #{komentar.username} #[span #{dateformat(new Date(komentar.vrijeme), "dd. mmmm yyyy H:MM")}]
+					div(class="content")!= komentar.content
+
+			else
+				h3 Nema komentara. Budite prvi!
+
+		div(class="clearfix")

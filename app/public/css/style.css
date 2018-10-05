@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Sanchez&subset=latin-ext');
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0; padding: 0; border: 0;
+	font-size: 100%; font: inherit; vertical-align: baseline; }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section { display: block; }
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* ### */
+
+.clearfix:after { display: block; visibility: hidden; clear: both; height: 0; font-size: 0; content: " "; }
+* html .clearfix { zoom: 1; }
+
+/* ### */
+
+div { box-sizing: border-box; }
+a { color: inherit; text-decoration: none; }
+a:visited { color: inherit; }
+
+strong { font-weight: bold; }
+em { font-style: italic; }
+
+html, body { min-height: 100%; }
+
+body { font-family: "Roboto", sans-serif; font-size: 14px; color: #fff; background: #19180a; }
+h1, h2, h3, h4, h5, h6 { font-family: "Sanchez", serif; color: #db5926; }
+h1, h2, h3 { padding-bottom: 20px; }
+h4, h5, h6 { padding-bottom: 10px; }
+h1 { font-size: 40px; font-weight: bold; width: 960px; margin: 0 auto; }
+h2 { font-size: 28px; }
+h3 { font-size: 24px; }
+h4 { font-size: 20px; }
+h5 { font-size: 18px; }
+h6 { font-size: 16px; }
+
+h1.title, h2.title, h3.title { width: 960px; margin: 0 auto; }
+
+h2 { padding-bottom: 10px; margin-bottom: 20px; border-bottom: 2px solid #19180a; width: 95%; }
+
+p { padding-bottom: 10px; }
+p:last-child { padding-bottom: 0; }
+
+input { height: 34px; box-sizing: border-box; margin: 0; padding: 0 10px; border: none; background: #fff; color: #000; }
+input:focus, input:active, textarea:focus { box-shadow: 0 0 5px rgba(0, 0, 0, 0.7) inset; }
+input[type="submit"] { cursor: pointer; background: #6e3b1a; color: #fff;
+	font-family: "Roboto", sans-serif; font-weight: bold; letter-spacing: 1px; transition: background 0.2s ease; }
+input[type="submit"]:hover { background: #ab5c29; }
+textarea { box-sizing: border-box; width: 100%; min-height: 200px; margin: 0; padding: 10px; border: none; background: #fff; color: #333; }
+
+.container { width: 960px; margin: 0 auto; }
+
+.col { width: 100%; padding: 10px; float: left; }
+.col_1_3 { width: 33.333%; }
+.col_2_3 { width: 66.666%; }
+.col_1_4 { width: 25%; }
+.col_1_2 { width: 50%; }
+
+.right { float: right; }
+
+.dropdown { display: inline-block; position: relative; }
+	.dropdown p { width: 100%; box-sizing: border-box; padding: 10px; padding-right: 40px;
+			background: #6e3b1a; display: inline-block; color: #fff; position: relative; cursor: pointer; }
+		.dropdown p:after { content: '\25BC'; float: right; position: absolute; right: 10px; transition: transform 0.5s ease; }
+		.dropdown.open p:after { transform: rotate(180deg); }
+	.dropdown ul { display: none; min-width: 100%; box-sizing: border-box; position: absolute; top: 100%;
+			border: 2px solid #6e3b1a; background: #3f220f; z-index: 5; }
+		.dropdown ul li { padding: 10px 15px; color: #fff; cursor: pointer; transition: background 0.2s ease; }
+		.dropdown ul li:hover, .dropdown ul li.selected { background: #6e3b1a; }
+		.dropdown ul li.filter:hover { background: none; }
+			.dropdown.w_filter input, .dropdown.w_source input { width: 100%; }
+
+.select { display: inline-block; position: relative; height: 34px; min-width: 200px; background: #6e3b1a; }
+	.select::before { content: " "; height: 100%; left: 0; top: 0; position: absolute; display: block;
+		transition: transform 0.5s ease; background: #ab5c29; }
+	.select > div { width: 100%; height: 100%; position: absolute; }
+		.select p { line-height: 34px; padding: 0 20px; float: left; text-align: center; box-sizing: border-box; cursor: pointer; }
+		.select p.selected { cursor: default; }
+	.select_2 p, .select_2:before { width: 50%; }
+
+	.select.selected_2::before { transform: translate(100%, 0); }
+
+.button { display: inline-block; height: 34px; line-height: 34px; padding: 0 20px;
+	background: #6e3b1a; color: #fff; font-weight: bold; transition: background 0.2s ease; }
+.button:hover { background: #ab5c29; }
+.button:active { box-shadow: 0 0 5px rgba(0, 0, 0, 0.7) inset; }
+
+.polja {  }
+	.polja input { width: 100%; }
+	.polja label { display: block; padding-bottom: 5px; }
+
+#header { height: 50px; margin-bottom: 20px; background: #3f220f; }
+	#logo { height: 40px; padding: 5px 0; margin-right: 30px; float: left; }
+		#logo img { height: 100%; width: auto; }
+	#nav-left { float: left; }
+	#nav-right { float: right; }
+
+#messages { background: #3f220f; padding: 10px; margin-bottom: 20px; }
+
+ul.nav { height: 50px; }
+	ul.nav li { float: left; height: 20px; line-height: 20px; padding: 0 20px; margin: 15px 0; border-right: 1px solid #fff; }
+		ul.nav li:after { content: ' '; display: block; height: 1px; width: 0; background: #fff; margin: 0 auto; transition: width 0.5s ease; }
+		ul.nav li:hover::after { width: 100%; }
+	ul.nav li:first-child { padding-left: 0; }
+	ul.nav li:last-child { padding-right: 0; border-right: none; }
+		ul.nav li a { color: #fff; font-family: "Sanchez", serif; font-size: 18px; }
+
+.container_menu { height: 50px; overflow: hidden; }
+	.container_menu li { float: left; line-height: 50px; text-align: center; transition: background 0.2s ease; }
+	.container_menu li.selected, .container_menu li:hover { background: #6e3b1a; }
+	.container_menu.cm_3 li { width: 33.333%; }
+	.container_menu.cm_4 li { width: 25%; }
+		.container_menu li h2 { width: 100%; margin-bottom: 0; padding-bottom: 0; border-bottom: none;
+			color: #fff; cursor: pointer; transition: color 0.2s ease; }
+		.container_menu li.selected h2 { cursor: default; }
+			.container_menu li h2 a { display: block; }
+
+#pretraga { width: 1000px; margin: 0 auto 20px; }
+	#pretraga form { display: flex; flex-direction: row; }
+		#pretraga .dropdown { width: 150px; }
+		#pretraga input[type="text"] { flex-grow: 1; }
+		#pretraga input[type="submit"] { width: 100px; }
+
+#main, .main { margin-bottom: 20px; min-height: 100px; background: #3f220f; }
+
+#index_filter { float: right; width: 200px; }
+
+.item { padding-bottom: 10px; overflow: hidden; }
+.item:last-child { padding-bottom: 0; }
+	.item .naziv_pjesme { padding-right: 10px; font-size: 16px; font-weight: bold; float: left; color: #f98d70; }
+	.item .naziv_izvodaca { padding-right: 10px; padding-top: 2px; float: left; }
+	.item .naziv_autora { padding-top: 2px; float: left; font-weight: bold; color: #af4319; }
+	.item .vrsta { padding-left: 10px; font-size: 16px; float: right; }
+		.item p { padding-bottom: 0; }
+
+/* ### */
+
+#main.uredivanje .dropdown { width: 290px; margin-right: 20px; }
+#main.uredivanje .select { width: 205px; margin-right: 20px; }
+#main.uredivanje .button { width: 95px; }
+#main.uredivanje .dropdown, #main.uredivanje .select, #main.uredivanje .button { float: left; }
+#main.uredivanje textarea { min-height: 400px; }
+
+#main.moj-sadrzaj .dropdown { width: 290px; float: left; }
+#main.moj-sadrzaj .dropdown:first-of-type { margin-right: 20px; }
+#main.moj-sadrzaj .button { float: right; margin-left: 10px; }
+#main.moj-sadrzaj span { float: right; font-weight: bold; line-height: 34px; }
+#main.moj-sadrzaj h3 { padding-bottom: 0; }
+
+.sadrzaj-title { margin-bottom: 20px; overflow: hidden; }
+	.sadrzaj-title-left { float: left; width: 65%; }
+	.sadrzaj-title-right { float: right; width: 35%; text-align: right; }
+		.sadrzaj-title h1, .sadrzaj-title h2 { width: 100%; }
+		.sadrzaj-title h2 { border-bottom: 0; margin-bottom: 0; }
+		.sadrzaj-pjesma { padding-bottom: 10px; }
+		.sadrzaj-izvodac { padding-bottom: 0; }
+		.sadrzaj-autor { padding-top: 12px; }
+		.sadrzaj-tip { padding-bottom: 0; }
+
+.meta { }
+	.meta-left { float: left; }
+	.meta-right { float: right; text-align: right; }
+		.meta h4:last-child { padding-bottom: 0; }
+
+#sadrzaj-content { color: #ddd; line-height: 1.2; font-size: 16px; }
+#sadrzaj-content.mono { font-family: monospace; }
+
+.komentari { min-height: 0; }
+	.komentari .mce-container { margin-bottom: 10px; }
+	.komentari form { margin-bottom: 10px; }
+		.komentari form h4 { float: left; line-height: 34px; padding-bottom: 0; }
+	.komentari h3 { padding-bottom: 10px; }
+	#komentar { min-height: 100px; }
+	.komentari .col > *:last-child { padding-bottom: 0; }
+
+.komentar { margin-bottom: 20px; }
+.komentar:last-child { margin-bottom: 0; }
+	.komentar .meta { padding: 5px; margin-bottom: 10px; background: #6e3b1a; font-size: 16px; font-weight: bold; }
+		.komentar .meta span { font-weight: normal; float: right; }
+	.komentar .content { line-height: 1.3; padding: 0 5px; }

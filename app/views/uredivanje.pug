@@ -1,0 +1,36 @@
+extends tmpl/layout
+
+block content
+
+	div(id="main" class="container uredivanje")
+		form(method="post")
+
+			div(class="col")
+				input(type="hidden" name="sadrzaj_izvodac" id="sadrzaj_izvodac" value=sadrzaj.izvodac.id)
+				div(class="dropdown w_source a_custom" data-input="sadrzaj_izvodac" data-hideroot="true"
+						data-izvor="/data_izvodac.json" data-sfiltering="sadrzaj_pjesma")
+					p #{sadrzaj.izvodac.naziv}
+					ul(class="dropdown_items")
+						li(class="filter")
+							input(type="text" placeholder="Pretraga")
+
+				input(type="hidden" name="sadrzaj_pjesma" id="sadrzaj_pjesma" value=sadrzaj.pjesma.id)
+				div(class="dropdown w_source a_custom" data-input="sadrzaj_pjesma" data-hideroot="true"
+						data-izvor="/data_pjesma.json" data-sfilter="sadrzaj_izvodac" data-emptytext="Pjesma")
+					p #{sadrzaj.pjesma.naziv}
+					ul(class="dropdown_items")
+						li(class="filter")
+							input(type="text" placeholder="Pretraga")
+
+				input(type="hidden" name="sadrzaj_privatno" id="sadrzaj_privatno" value=sadrzaj.privatno ? 1 : 0)
+				div(class="select select_2" + (sadrzaj.privatno ? "" : " selected_2") data-input="sadrzaj_privatno")
+					div
+						p(class=sadrzaj.privatno ? "selected" : "" data-val="1") Privatno
+						p(class=sadrzaj.privatno ? "" : "selected" data-val="0") Javno
+
+				input(type="submit" value="Spremi" class="button")
+
+			div(class="col")
+				textarea(name="content" id="uredivac")!= sadrzaj.content
+
+			div(class="clearfix")

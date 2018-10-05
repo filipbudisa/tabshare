@@ -1,0 +1,37 @@
+extends tmpl/layout
+
+block content
+
+	div(id="main" class="container")
+		div(class="col col_1_2")
+			h2 Prijava
+
+			form(class="polja" method="post")
+				p
+					label(for="user") Korisničko ime
+					input(type="text" name="user" id="user")
+				p
+					label(for="pass") Lozinka
+					input(type="password" name="pass" id="pass")
+				p
+					input(type="submit" name="submit" value="Prijava")
+
+		div(class="col col_1_2")
+			h2 Registracija
+
+			form(class="polja" method="post")
+				p
+					label(for="user") Korisničko ime
+					input(type="text" name="username" id="username")
+				p
+					label(for="user") Email
+					input(type="text" name="email" id="email")
+				p
+					label(for="pass") Lozinka
+					input(type="password" name="password" id="password")
+				p
+					input(type="password" name="password2" id="password2")
+				p
+					input(type="submit" name="submit" value="Registracija")
+
+		div(class="clearfix")

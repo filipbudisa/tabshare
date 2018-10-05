@@ -1,0 +1,26 @@
+{
+  "name": "TabShare",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dateformat": "^3.0.2",
+    "escape-html": "^1.0.3",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "md5": "^2.2.1",
+    "mysql": "^2.15.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "pug": "^2.0.0-rc.4",
+    "sprintf-js": "^1.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodejs app.js"
+  },
+  "author": "Filip Budiša",
+  "license": "GPLv3"
+}

@@ -1,0 +1,71 @@
+html
+	head
+		if title
+			title #{title} | #{appTitle}
+		else
+			title #{appTitle}
+		script(type="text/javascript" src="/static/js/jquery.min.js")
+		script(type="text/javascript" src="/static/js/common-dropdown.js")
+		script(type="text/javascript" src="/static/js/common-select.js")
+
+		if tiny
+			script(type="text/javascript" src="/static/tinymce/tinymce.min.js")
+			script(type="text/javascript" src="/static/js/uredivac.js")
+
+		link(rel="stylesheet", href="/static/css/style.css")
+	body
+		div(id="header")
+			div(class="container")
+				a(href="/", id="logo")
+					img(src="/static/img/logo.png")
+				div(id="nav-left")
+					ul(class="nav")
+						li
+							a(href="/tekstovi/") Tekstovi
+						li
+							a(href="/akordi/") Akordi
+						li
+							a(href="/tabulature/") Tabulature
+				div(id="nav-right")
+
+					if user
+						ul(class="nav")
+							li
+								a(href="/prijava/") #{user.username}
+							li
+								a(href="/moj-sadrzaj/") Moj sadržaj
+							li
+								a(href="/odjava/") Odjava
+					else
+						ul(class="nav")
+							li
+								a(href="/prijava/") Prijava
+							li
+								a(href="/prijava/") Registracija
+
+		if title && !hidetitle
+			h1 #{title}
+
+
+		if message
+			div(id="messages" class="container")
+				p #{message}
+
+
+		unless hideSearch
+			div(id="pretraga" class="container")
+				form(action="/pretraga/", method="post")
+					input(type="hidden", name="tip", id="tip", value="-1")
+					div(class="dropdown", data-input="tip")
+						p Sve
+						ul(class="dropdown_items")
+							li(data-val="-1" class="selected") Sve
+							li(data-val="0") Tekstovi
+							li(data-val="1") Akordi
+							li(data-val="2") Tabulature
+							li(data-val="10") Izvođači
+							li(data-val="11") Pjesme
+					input(type="text", name="tekst", placeholder="Pretraga")
+					input(type="submit", name="submit", value="Pretraži")
+
+		block content

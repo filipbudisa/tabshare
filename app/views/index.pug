@@ -1,0 +1,20 @@
+extends tmpl/layout
+
+block content
+	div(id="main" class="container")
+
+		div(class="col col_1_2")
+			h2 Najnovije
+			each sadrzaj in sadrzajNajnov
+				include tmpl/item
+			else
+				h3 Nema sadržaja
+
+		div(class="col col_1_2")
+			h2 Najtraženije
+			each sadrzaj in sadrzajNajtr
+				include tmpl/item
+			else
+				h3 Nema sadržaja
+
+		div(class="clearfix")
